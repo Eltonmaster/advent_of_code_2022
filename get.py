@@ -25,8 +25,8 @@ def folder_check(conf):
     conf["today"] = today
     save_conf(conf)
     for i in range(1, int(today)+1):
-        if not os.path.exists(f"./{today}"):
-            os.mkdir(f"./{today}")
+        if not os.path.exists(f"./{str(i).zfill(2)}"):
+            os.mkdir(f"./{str(i).zfill(2)}")
             download_challenge(str(i).zfill(2), conf)
         else:
             if not os.path.exists(f"./{today}/challenge.txt"):
