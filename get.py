@@ -41,9 +41,9 @@ def download_challenge(today, conf):
     with open(f"./{today}/challenge.txt", "w") as f:
         f.write(challenge)
     with open(f"./{today}/input.txt", "w") as f:
-        f.write(requests.get(f"https://adventofcode.com/2022/day/{int(conf['today'])}/input", cookies=jar).text)
+        f.write(requests.get(f"https://adventofcode.com/2022/day/{int(today)}/input", cookies=jar).text)
     with open(f"./{today}/adventofcode.url", mode='w', newline='\r\n') as f:
-        f.write(f"[InternetShortcut]\nURL=https://adventofcode.com/2022/day/{int(conf['today'])}")
+        f.write(f"[InternetShortcut]\nURL=https://adventofcode.com/2022/day/{int(today)}")
         
 
 
