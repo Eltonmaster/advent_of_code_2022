@@ -20,6 +20,13 @@ def get_duplicate(dic, string1, string2):
         if part in string2:
             return dic[part]
     return -1
+
+def find_common(s1, s2, s3):
+    for entry1 in s1:
+        for entry2 in s2:
+            for entry3 in s3:
+                if entry1==entry2==entry3:
+                    return entry1
     
 
 def three1(dic, data):
@@ -32,8 +39,17 @@ def three1(dic, data):
             x+= get_duplicate(dic, left, right)
         else:
             raise Exception(f"Problem with case {entry}")
-
     print(f"1) Sum of priorities: {x}")
+    
+def three2(dic, data):
+    x = 0
+    for i in range(0, len(data)):
+        if i % 3 == 0:
+            x += dic[find_common(data[i],data[i+1],data[i+2])]
+            
+    print(f"2) Sum of group badge priorities: {x}")
+            
 
 dic, data = init()
 three1(dic, data)
+three2(dic, data)
