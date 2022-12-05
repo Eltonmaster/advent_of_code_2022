@@ -78,13 +78,13 @@ def five1(data, C):
     for entry in data:
         _, amount, _, origin, _, destination = entry.strip().split(" ")
         C.move1(origin, destination, amount)
-    print(f"State of cargo haven after moves: \n{C}\nTop containers: {C.tops()}\n")
+    print(f"1) State of cargo haven after moves: \n{C}\nTop containers: {C.tops()}\n")
     
 def five2(data, C):
     for entry in data:
         _, amount, _, origin, _, destination = entry.strip().split(" ")
         C.move2(origin, destination, amount)
-    print(f"State of cargo haven after moves: \n{C}\nTop containers: {C.tops()}\n")
+    print(f"2) State of cargo haven after moves: \n{C}\nTop containers: {C.tops()}\n")
 
 data, C1, C2 = init()
 five1(data, C1)
