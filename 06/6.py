@@ -28,6 +28,3 @@ data = init()
 
 six1(data)
 six2(data)
-
-
-#nznrnfrfntjfmvf wmzdfjlvtqnbhc prsg
