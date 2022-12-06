@@ -13,4 +13,3 @@ with open("input.txt", "r") as f:
 a.sort()
 print(f"1) Most Calories: {a[-1]}")
 print(f"2) Calories of top 3: {sum(a[-3:])}")
-            

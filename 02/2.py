@@ -6,6 +6,23 @@ def init():
             data.append(lines)
     return data
             
+def validate():
+    jan_i = []
+    jan_o = []
+    s_out = ""
+    with open("jan.txt", "r") as f:
+        for line in f:
+            jan_i.append(line)   
+    with open("jan_output.txt", "r") as f:
+        for line in f:
+            jan_o.append(line)
+    for i in range(0, len(jan_i)):
+        score = calc_points_1(jan_i[i])
+        if score != int(jan_o[i]):
+            s_out += f"Difference in case {jan_i[i].strip()}. Got {jan_o[i].strip()} but expected {score}\n"
+    with open("val.txt", "w") as f:
+        f.write(s_out)
+
 def calc_points_1(x):
     #A=Rock B=Paper C=Scissors
     #Rock=1 Paper=2 Scissors=3
@@ -70,6 +87,6 @@ def two2(data):
     
 
 data = init()
-two1(data)
-two2(data)
-
+# two1(data)
+# two2(data)
+validate()
