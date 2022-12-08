@@ -29,7 +29,7 @@ def folder_check(conf):
             os.mkdir(f"./{str(i).zfill(2)}")
             download_challenge(str(i).zfill(2), conf)
         else:
-            if not os.path.exists(f"./{today}/challenge.txt"):
+            if not os.path.exists(f"./{str(i).zfill(2)}/challenge.txt"):
                 download_challenge(str(i).zfill(2), conf)
         
 
