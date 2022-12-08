@@ -47,8 +47,7 @@ class Node:
         if self.type == "dir": a.append(self)
         for entry in self.children:
             if entry.type=="dir": a= a+entry.get_subdirectories()
-        return a
-            
+        return a      
              
 def init():
     data = []
@@ -58,8 +57,6 @@ def init():
             data.append(sublines)   
     N = Node("root", "dir", None)
     return data, N
-        
-
 
 def seven1(data, root):
     current_node = root
@@ -89,25 +86,19 @@ def seven1(data, root):
     print(f"{root}\n1) Sum of size of folders smaller than 100000: {a}")
     
 def seven2(root):
-    
-    # install_space = 30000000-root.get_size()
     install_space = 70000000-root.get_size()-30000000
-    temp=float("inf") #always the biggest number
+    temp=float("inf")               #always the biggest number
     saved_node = None
     
     for entry in root.get_subdirectories():
         y = entry.get_size()
-        x = y + install_space #space when deleting current iterated dir
+        x = y + install_space       #space when deleting current iterated dir
         if x >= 0 and y < temp: 
             temp = y
             saved_node = entry
     
     print(f"2) The smallest directory to delete so that enough space is freed up is {saved_node.name} with a size of {temp}")
             
-    
-    
-    
-    
 data, N = init()
 seven1(data, N)
 seven2(N)
