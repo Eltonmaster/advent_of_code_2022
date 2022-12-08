@@ -18,7 +18,7 @@ class Worker:
         
 
 def init():
-    with open("input.txt", "r") as f:
+    with open("jan.txt", "r") as f:
         data = []
         for lines in f:
             data.append(lines)
